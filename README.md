@@ -37,3 +37,18 @@ priority .
 2. If user is not login => on Click of add to cart user should get error.
 
 3. If one kind of item is already added then increase the item count in the cart.
+
+
+What is CI/CD
+
+Continous integration
+
+Continous Deployment
+
+
+Instructions
+
+1. Do not commit directly to main branch
+2. Always create a new branch for feature/bug fix/refactor
+3. there is a hook setup which sees if there is a new commit in main branch, it redeploys app on netlify
+4. 
