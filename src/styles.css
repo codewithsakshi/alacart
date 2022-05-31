@@ -1,0 +1,20 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.cart_count_btn {
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: #333;
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 7px;
+  font-size: 12px;
+}
+
+.cart_count_btn:hover {
+  border: 2px solid rgba(59, 130, 246, 0.5);
+}
