@@ -13,17 +13,10 @@ const SignUp = ({ visible, closeHandler, signup, state }) => {
   });
 
   const handleSubmit = (e) => {
-    if (
-      formData.userName === "" ||
-      formData.email === "" ||
-      formData.password === ""
-    ) {
-      setErrormsg("Please Enter all the details");
-    } else {
       e.preventDefault();
       signup(formData);
       closeHandler();
-    }
+    
   };
 
   return (
@@ -36,7 +29,7 @@ const SignUp = ({ visible, closeHandler, signup, state }) => {
       >
         <Modal.Header>
           <Text id="modal-title" size={18}>
-            SignUp/Login
+           Please Signin To Continue 
           </Text>
         </Modal.Header>
         <Modal.Body>
@@ -51,7 +44,8 @@ const SignUp = ({ visible, closeHandler, signup, state }) => {
               value={formData.userName}
               onChange={(e) =>
                 setFormData({ ...formData, userName: e.target.value })
-              }
+               }
+               required="true"
             />
             <Spacer />
             <Input
@@ -66,6 +60,7 @@ const SignUp = ({ visible, closeHandler, signup, state }) => {
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
               }
+              required="true"
             />
             <Spacer />
             <Input
@@ -80,9 +75,10 @@ const SignUp = ({ visible, closeHandler, signup, state }) => {
               onChange={(e) =>
                 setFormData({ ...formData, password: e.target.value })
               }
+              required="true"
             />
             <Spacer />
-            <Button type="submit" size="sm">
+            <Button type="submit" size="lg" style={{margin: "auto", width: "100%"}}>
               Submit{" "}
             </Button>
           </form>

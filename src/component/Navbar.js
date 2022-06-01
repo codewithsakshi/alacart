@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Spacer } from "@nextui-org/react";
+import { Button, Spacer, Text, Row } from "@nextui-org/react";
 import { connect } from "react-redux";
+import {FaShoppingCart} from "react-icons/fa"
 import SignUp from "./SignUp";
 import { ACTIONS } from "../action";
 
-const Navbar = ({ isLogin, logout }) => {
-  const [visible, setVisible] = useState(false);
+const Navbar = ({ isLogin, name , cartItems ,logout }) => {
 
+  const cartItemsLength = cartItems.length > 0 ? cartItems.length: ""
+
+   const [visible, setVisible] = useState(false);
   const handler = () => {
     setVisible(true);
   };
@@ -21,35 +24,42 @@ const Navbar = ({ isLogin, logout }) => {
   };
 
   const subContent = !isLogin ? (
-    <ul style={{ display: "flex", justifyContent: "space-between" }}>
+    <ul>
       <li>
         <Button onClick={handler}>Signup/Login</Button>
       </li>
     </ul>
   ) : (
-    <ul>
+    <ul className="subcontent">
       <li>
+        <Row>
         <Button auto onClick={handleLogout}>
           Logout
         </Button>
-        <Spacer x={0.5} />
-        <Link to="/cart">Your Cart</Link>
+        <Spacer x={1}/>
+        <Link to="/cart" className="cart"><FaShoppingCart className="cart_icon"/>
+         {cartItemsLength && <Text className="cart_count">
+           {cartItemsLength}
+           </Text>}
+         
+        </Link>
+        </Row>
       </li>
     </ul>
   );
 
   return (
-    <nav
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center"
-      }}
-    >
-      <h3>
+    <nav>
+      <div  className="nav_links">
+      <h3 className="logo">
         <Link to="/">Fruit Basket</Link>
       </h3>
-      {subContent}
+      {isLogin &&  <Text color="primary" size="2rem" justify="space-between">
+        Welcome {name}
+      </Text>
+      }
+       {subContent}
+       </div>
       {!!visible && <SignUp visible={visible} closeHandler={closeHandler} />}
     </nav>
   );
@@ -57,7 +67,9 @@ const Navbar = ({ isLogin, logout }) => {
 
 const mapStateToProps = (state) => {
   return {
-    isLogin: state.isLoggedIn
+    isLogin: state.isLoggedIn,
+    name: state.user.userName,
+    cartItems: state.cartItems
   };
 };
 
