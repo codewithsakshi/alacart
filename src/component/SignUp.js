@@ -15,13 +15,16 @@ const SignUp = ({ visible, closeHandler, signup, state }) => {
   const handleSubmit = (e) => {
       e.preventDefault();
       signup(formData);
-      closeHandler();
-    
+      closeHandler();   
   };
 
+  if(!visible) {
+    return null;
+  }
+
   return (
-    <div>
       <Modal
+        scroll
         closeButton
         aria-labelledby="modal-title"
         open={visible}
@@ -45,7 +48,7 @@ const SignUp = ({ visible, closeHandler, signup, state }) => {
               onChange={(e) =>
                 setFormData({ ...formData, userName: e.target.value })
                }
-               required="true"
+               required
             />
             <Spacer />
             <Input
@@ -84,7 +87,6 @@ const SignUp = ({ visible, closeHandler, signup, state }) => {
           </form>
         </Modal.Body>
       </Modal>
-    </div>
   );
 };
 

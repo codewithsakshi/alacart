@@ -1,19 +1,11 @@
-import { products } from "../products";
+import {connect} from 'react-redux'
 import CardItem from "./CardItem";
 import { Grid } from "@nextui-org/react";
-import { useState } from "react";
 
-export function Cards() {
-  const [productsData, setProductdata] = useState(products);
-   
-  const filteredProductData = (text) => {
-   const filteredData = productsData.filter((product) => product.name.toLowerCase.includes(text.toLowerCase))
-   setProductdata(filteredData)
-  }
-
+const Cards = ({products}) => {
   return (
     <Grid.Container gap={2} justify="flex-start">
-      {productsData.map((item) => {
+      {products.map((item) => {
         return (
           <CardItem
             key={item.id}
@@ -21,10 +13,15 @@ export function Cards() {
             price={item.Price}
             imgurl={item.imgUrl}
             id={item.id}
-            filteredProductData={filteredProductData}
           />
         );
       })}
     </Grid.Container>
   );
 }
+
+const mapStateToProps = (state) => ({
+  products: state.products
+})
+
+export default connect(mapStateToProps)(Cards)

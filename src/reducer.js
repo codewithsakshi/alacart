@@ -1,5 +1,6 @@
 import { ACTIONS } from "./action";
 import { v4 as uuid } from "uuid";
+import { products as allProducts } from "./products";
 
 // create two new case to increase & decrease the item count in redux
 const initialState = {
@@ -10,7 +11,8 @@ const initialState = {
     email: "",
     password: ""
   },
-  cartItems: []
+  cartItems: [],
+  products: allProducts,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -85,6 +87,14 @@ export const reducer = (state = initialState, action) => {
      }
     }
     
+    case ACTIONS.SEARCH_PRODUCT:
+      const {searchText = ''} = action.payload;
+      const filteredProduct = allProducts.filter(({productName}) => productName.toLowerCase().includes(searchText.toLowerCase()))
+      return {
+        ...state,
+        products: filteredProduct
+      }
+
      default:
       return state;
   }
