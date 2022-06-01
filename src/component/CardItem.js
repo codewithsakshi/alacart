@@ -36,17 +36,17 @@ function CardItem({ name, price, imgurl, addToCart, id, state }) {
             alt={name}
           />
         </Card.Body>
-        <Card.Footer justify="flex-start">
-          <Row wrap="wrap" justify="space-between">
+        <Card.Footer>
+          <Row wrap="wrap" justify="space-between" align="center">
             <Text b>{name}</Text>
             <Text css={{ color: "$accents4", fontWeight: "$semibold" }}>
               {price}
             </Text>
-            <Button size="xs" onClick={handleAddToCart}>
+            <Button size="lg" onClick={handleAddToCart} style={{margin: "20px auto"}}>
               Add to cart
             </Button>
-          </Row>
-        </Card.Footer>
+            </Row>
+          </Card.Footer>
       </Card>
       {isvisible && <Signup visible={isvisible} closeHandler={closeHandler} />}
     </Grid>

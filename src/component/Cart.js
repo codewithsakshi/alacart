@@ -5,12 +5,11 @@ import { Card, Grid, Row, Text } from "@nextui-org/react";
 import { ACTIONS } from "../action";
 
 const Cart = ({ cartItems, increase_item_count, decrease_item_count }) => {
-  console.log("cartItem::", cartItems);
   return (
     <Grid.Container gap={2} justify="flex-start">
       {cartItems.map((item) => {
         return (
-          <Grid xs={6} sm={3}>
+          <Grid xs={6} sm={3} key={item.id}>
             <Card hoverable clickable>
               <Card.Body css={{ p: 0 }}>
                 <Card.Image

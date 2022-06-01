@@ -42,7 +42,6 @@ export const reducer = (state = initialState, action) => {
         cartItems: []
       };
     case ACTIONS.ADD_TO_CART:
-      console.log("payload", action.payload);
       const item = state.cartItems.find(
         (item) => item.id === action.payload.id
       );
@@ -54,24 +53,39 @@ export const reducer = (state = initialState, action) => {
         ...state,
         cartItems: [...state.cartItems, action.payload]
       };
-    case ACTIONS.INCREASE_ITEM_COUNT:
-      state.cartItems.map((item) => {
+    case ACTIONS.INCREASE_ITEM_COUNT:{
+      const updatedState = state.cartItems.map((item) => {
         if (action.payload.id === item.id) {
           item.item_count++;
         }
-        return state;
-      });
-      break;
-    case ACTIONS.DECREASE_ITEM_COUNT:
-      state.cartItems.map((item) => {
-        if (action.payload.id === item.id) {
-          item.item_count--;
-        }
-        return state;
+        return item;
       });
 
-      break;
-    default:
+     return {
+       ...state,
+       cartItems: updatedState
+     }
+
+    }
+    
+    case ACTIONS.DECREASE_ITEM_COUNT:{
+      let updatedState = state.cartItems.map((item) => {
+        if (action.payload.id === item.id ) {
+            item.item_count--
+        }
+        return item;
+      });
+
+      updatedState = updatedState.filter(item => 
+        item.item_count > 0
+      )
+     return {
+       ...state,
+       cartItems: updatedState
+     }
+    }
+    
+     default:
       return state;
   }
 };
