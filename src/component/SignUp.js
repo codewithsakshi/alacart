@@ -13,17 +13,9 @@ const SignUp = ({ visible, closeHandler, signup, state }) => {
   });
 
   const handleSubmit = (e) => {
-    if (
-      formData.userName === "" ||
-      formData.email === "" ||
-      formData.password === ""
-    ) {
-      setErrormsg("Please Enter all the details");
-    } else {
-      e.preventDefault();
+     e.preventDefault();
       signup(formData);
       closeHandler();
-    }
   };
 
   return (
@@ -36,7 +28,7 @@ const SignUp = ({ visible, closeHandler, signup, state }) => {
       >
         <Modal.Header>
           <Text id="modal-title" size={18}>
-            SignUp/Login
+            Please Signin To Continue
           </Text>
         </Modal.Header>
         <Modal.Body>
