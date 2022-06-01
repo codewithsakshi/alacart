@@ -1,8 +1,8 @@
 import "./styles.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Cards } from "./component/Cards";
+import Cards from "./component/Cards";
 import Navbar from "./component/Navbar";
-import { SearchBox } from "./component/SearchBox";
+import SearchBox from "./component/SearchBox";
 import Cart from "./component/Cart";
 
 export default function App() {
