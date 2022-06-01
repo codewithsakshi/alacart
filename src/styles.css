@@ -1,6 +1,5 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+body{
+  overflow-y: scroll !important;
 }
 
 .cart_count_btn {
@@ -17,4 +16,39 @@
 
 .cart_count_btn:hover {
   border: 2px solid rgba(59, 130, 246, 0.5);
+}
+
+.nav_links{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.cart_icon{
+  font-size: 30px;
+  color: white;
+  margin-top: 8px;
+}
+
+.cart{
+  position: relative;
+}
+
+.cart_count{
+  background: red;
+  color: white;
+  position: absolute;
+  bottom: 60%;
+  left: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+}
+
+.add_to_cart_btn{
+  margin: 20px auto;
 }

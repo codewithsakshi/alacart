@@ -42,7 +42,7 @@ function CardItem({ name, price, imgurl, addToCart, id, state }) {
             <Text css={{ color: "$accents4", fontWeight: "$semibold" }}>
               {price}
             </Text>
-            <Button size="xs" onClick={handleAddToCart}>
+            <Button size="lg" onClick={handleAddToCart} className="add_to_cart_btn">
               Add to cart
             </Button>
           </Row>

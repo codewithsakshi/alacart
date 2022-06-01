@@ -1,8 +1,8 @@
-import { products } from "../products";
+import {connect} from 'react-redux'
 import CardItem from "./CardItem";
 import { Grid } from "@nextui-org/react";
 
-export function Cards() {
+const Cards = ({products}) => {
   return (
     <Grid.Container gap={2} justify="flex-start">
       {products.map((item) => {
@@ -19,3 +19,9 @@ export function Cards() {
     </Grid.Container>
   );
 }
+
+const mapStateToProps = (state) => ({
+  products: state.products
+})
+
+export default connect(mapStateToProps)(Cards)
