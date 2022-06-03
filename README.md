@@ -78,7 +78,27 @@ Add Welcome user with userName
 2. Logo of fruit-basket => add padding and css
 3. button of add to cart button  => incease padding 
 
-
-
 1. fix scrollbar
 2. fix searchbar
+
+<!-- To Do -->
+1. Modal input tag.
+2. on click of logo icon redirect to home page.
+5. left & right icon button is not working in carousel.
+
+
+ <!-- done -->
+1. Add brand logo - maximum 20 min. =>
+2. Add footer. Add copyright information.
+3. Add carousel.
+
+<!-- Cart page -->
+<!-- To do -->
+1. Calculate total price of item.
+2. calculate discount price.
+3. calculate checkout price.
+4. add input to discount coupan code,
+
+
+
+

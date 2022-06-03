@@ -10,7 +10,7 @@ const SearchBox = ({handleSearch}) => {
   }
   return (
     <div style={{width: '50%', margin: 'auto', marginBottom: '40px'}}>
-      <Input size="lg" fullWidth placeholder="search fruits" onChange={handleChange}/>
+      <Input size="lg" fullWidth placeholder="Search fruits" onChange={handleChange}/>
     </div>
   );
 };
