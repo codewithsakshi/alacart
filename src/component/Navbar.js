@@ -51,7 +51,7 @@ const Navbar = ({ isLogin, name , cartItems ,logout }) => {
     <nav>
       <div  className="nav_links">
       <h3 className="logo">
-        <Link to="/">Fruit Basket</Link>
+        <Link to="/" className="logo"><img src="/alacart.jpg"/></Link>
       </h3>
       {isLogin &&  <Text color="primary" size="2rem" justify="space-between">
         Welcome {name}

@@ -74,7 +74,7 @@ const SignUp = ({ visible, closeHandler, signup, state }) => {
               }
             />
             <Spacer />
-            <Button type="submit" size="sm">
+            <Button type="submit" size="lg" style={{margin: "auto", width: "100%"}}>
               Submit{" "}
             </Button>
           </form>
