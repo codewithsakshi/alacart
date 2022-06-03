@@ -2,8 +2,10 @@ import React from "react"
 import { Button, Text, Spacer } from "@nextui-org/react"
 import {FaMinus} from "react-icons/fa"
 
-export const CartTotal = () => {
-
+export const CartTotal = ({subtotal, discountMoney}) => {
+  let shipping = 20;
+  const totalMoney = subtotal - discountMoney
+ 
     return(
         <div className="cart_total">
             <div>
@@ -15,16 +17,16 @@ export const CartTotal = () => {
         >Cart Totals</Text>
         <div className="totalcart_text">
             <p>Subtotal</p>
-            <p>300</p>
+            <p>{subtotal} Rs</p>
         </div>
         <div  className="totalcart_text">
             <p>Total Discount</p>
             <FaMinus className="text-white" />
-            <p>100</p>
+            <p>{discountMoney}</p>
         </div>
         <div  className="total_orderprice_sec totalcart_text">
             <p>Total Order Price</p>
-            <p>200</p>
+            <p>{totalMoney}</p>
         </div>
         </div>
         <div>
@@ -37,7 +39,7 @@ export const CartTotal = () => {
           >Shipping</Text>
         <div  className="totalcart_text">
             <p>Next Day</p>
-            <p>11</p>
+            <p>{shipping}</p>
         </div>
         <div  className="totalcart_text">
             <p>Shipping To India</p>
@@ -50,7 +52,7 @@ export const CartTotal = () => {
         }}
         weight="bold"
         >Order Total</Text>
-            <p>211</p>
+            <p>{totalMoney + shipping}</p>
         </div>
         </div>
         <Spacer y={1}></Spacer>

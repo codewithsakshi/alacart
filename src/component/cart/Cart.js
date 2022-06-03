@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { FaPlus, FaMinus } from "react-icons/fa";
-import { Card, Grid, Row, Text} from "@nextui-org/react";
+import { Card, Grid, Row, Text, Input, Button} from "@nextui-org/react";
 import { ACTIONS } from "../../action";
 import "./cart.css"
 import {CartTotal} from "../CartTotal"
 
+
 const Cart = ({ cartItems, increase_item_count, decrease_item_count }) => {
-  console.log("cartItem::", cartItems);
+  const subtotal = cartItems.reduce((acc, item) => acc + parseInt(item.price) * +item.item_count, 0)
+ 
+
+  const [discountCode, setDiscountCode] = useState("")
+  const [discountMoney, setDiscountMoney] = useState(0)
+
+  const applyDiscount = () => {
+    const discount = subtotal * 30 / 100
+   setDiscountMoney(discount)
+  }
 
   return (
     <div className="cart_container">
@@ -39,8 +49,13 @@ const Cart = ({ cartItems, increase_item_count, decrease_item_count }) => {
                 </div>
           );
       })}
+      <div className="discount_sec">
+        <Text size={20}>Apply Discount Code</Text>
+        <input type="text" placeholder="E.g. SUMMER30X"  className="discount_input"   onChange={(e) => setDiscountCode(e.target.value.toUpperCase())}></input>
+        <button className="discount_btn" onClick={applyDiscount}>Apply</button>
       </div>
-      <CartTotal/>
+      </div>
+      <CartTotal subtotal={subtotal} discountMoney={discountMoney}/>
       </div>
   );
 };
