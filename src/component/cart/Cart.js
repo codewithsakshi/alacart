@@ -21,7 +21,7 @@ const Cart = ({ cartItems, increase_item_count, decrease_item_count }) => {
 
   return (
     <div className="cart_container">
-      <div>
+      <div className="cart_subcontainer">
       {cartItems.map((item) => {
         const totalPrice = parseInt(item.price) * parseInt(item.item_count)
         return (
@@ -36,7 +36,7 @@ const Cart = ({ cartItems, increase_item_count, decrease_item_count }) => {
                     className="cart_count_btn"
                     onClick={() => increase_item_count({ id: item.id })}
                   >
-                    <FaPlus />
+                   <FaPlus /> 
                   </button>
                   <p>{item.item_count}</p>
                   <button

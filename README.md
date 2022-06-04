@@ -1,57 +1,26 @@
-Navbar
+## Project Description
 
-Login/Signup
+Alacart is an E-commerce site for fruits and vegetables that allow user to purchase fresh fruits and get delivered to his/her doorstep.
 
-Login=> Login Page
-Signup => Signup Page
+## Features
 
-onLogin => Cart
-No of items in the cart icon on the top of cart.
-
-onCick of cart => A cart page to show list of items.
-
-home page =>
-There will be bunch of card
-
-1. add to cart button on the cart
-2. price of item in the card
-
-<!--
-1. on click of cartItems items should be added in the cart.
-2. on click of Cart link  default page rendering is running.
-
-3. on Click of cart link user is not able to login continue on that page
+1. Login/Signup using email
+2. Add product to cart
+3. Change product quantity
+4. Apply Discount coupon
+5. Checkout
 
 
- -->
-<!-- create function for login by gmail id & password -->
-
-priority .
-
-1. useLocalStorage hook => setState in localStorage
-
-<!-- Card  functionality -->
-<!-- Complete Task -->
-1.If user is login => on click of add to cart items should be added in the cart. 
-
-2. If user is not login => on Click of add to cart user should get error.
-
-3. If one kind of item is already added then increase the item count in the cart.
-
-
-What is CI/CD
-
-Continous integration
-
-Continous Deployment
-
-
-Instructions
-
-1. Do not commit directly to main branch
-2. Always create a new branch for feature/bug fix/refactor
-3. there is a hook setup which sees if there is a new commit in main branch, it redeploys app on netlify
-4. 
+## Installation Step
+1. git clone => https://github.com/john-smilga/react-projects.git
+2. npm install
+3. npm start
+   
+# Planned features
+1. Address form. 
+2. show all addresses.
+3. Firebase authentication. - 2 days
+4. Payment checkout
 
 
 Git commands
@@ -66,39 +35,17 @@ Future Reading
 2. https://www.youtube.com/watch?v=e2IbNHi4uCI&ab_channel=freeCodeCamp.org
 
 
-Cart Features 
-1. If the item count is 0 then onclick of increase  button item should be removed from the cart.
-2. Total price should be available in the cart Items.
 
-<!-- Home screen To do-->
+3. Fix Readme file - 4 hrs
 
-Add Welcome user with userName 
-<!-- Completed -->
-1. If user click on add to cart button then increase in the count should be on top of the cart.
-2. Logo of fruit-basket => add padding and css
-3. button of add to cart button  => incease padding 
-
-1. fix scrollbar
-2. fix searchbar
-
-<!-- To Do -->
-1. Modal input tag.
-2. on click of logo icon redirect to home page.
-5. left & right icon button is not working in carousel.
+4. Project Description: min 3 line
 
 
- <!-- done -->
-1. Add brand logo - maximum 20 min. =>
-2. Add footer. Add copyright information.
-3. Add carousel.
+# Further Reading
 
-<!-- Cart page -->
-<!-- To do -->
-1. Calculate total price of item.
-2. calculate discount price.
-3. calculate checkout price.
-4. add input to discount coupan code,
+1. https://victorbruce82.medium.com/writing-an-awesome-readme-for-your-side-projects-fabd20f96db0
+2. https://www.youtube.com/watch?v=PKwu15ldZ7k&ab_channel=WebDevSimplified
 
-
-
-
+<!-- To do  -->
+1. Remove the white background from the modal input tag.
+2. 

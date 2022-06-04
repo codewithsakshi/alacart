@@ -5,11 +5,10 @@ import {ACTIONS} from '../action'
 
 const SearchBox = ({handleSearch}) => {
   const handleChange =  (e) => {
-    console.log("search text:: ", e.target.value)
     handleSearch(e.target.value)
   }
   return (
-    <div style={{width: '50%', margin: 'auto', marginBottom: '40px'}}>
+    <div style={{width: '50%', margin: 'auto', marginTop: '-60px', marginBottom: "40px"}}>
       <Input size="lg" fullWidth placeholder="Search fruits" onChange={handleChange}/>
     </div>
   );

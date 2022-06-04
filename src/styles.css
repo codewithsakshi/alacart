@@ -11,7 +11,6 @@ body{
 
 .logo{
   width: 200px;
-  height: 100px;
 }
 
 
@@ -20,12 +19,12 @@ body{
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
+  margin-top: -50px;
 }
 
 .cart_icon{
   font-size: 30px;
   color: white;
-  margin-top: 4px;
 }
 
 .cart{
@@ -136,3 +135,4 @@ button{
   margin: auto;
   width: 80%;
 }
+

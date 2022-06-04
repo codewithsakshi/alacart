@@ -26,11 +26,11 @@ const Navbar = ({ isLogin, name , cartItems ,logout }) => {
   const subContent = !isLogin ? (
     <ul>
       <li>
-        <Button onClick={handler}>Signup/Login</Button>
+        <Button onClick={handler}  style={{marginTop: "-5px"}}>Signup/Login</Button>
       </li>
     </ul>
   ) : (
-    <ul className="subcontent">
+    <ul className="subcontent" style={{marginTop: "-12px"}}>
       <li>
         <Row>
         <Link to="/cart" className="cart"><FaShoppingCart className="cart_icon"/>
@@ -39,7 +39,7 @@ const Navbar = ({ isLogin, name , cartItems ,logout }) => {
            </Text>}
         </Link>
         <Spacer x={2}/>
-        <Button auto onClick={handleLogout}>
+        <Button auto onClick={handleLogout} style={{marginTop: "-5px"}}>
           Logout
         </Button>
        </Row>
@@ -48,16 +48,18 @@ const Navbar = ({ isLogin, name , cartItems ,logout }) => {
   );
 
   return (
-    <nav>
+    <nav className="nav_links_container">
       <div  className="nav_links">
       <h3 className="logo">
         <Link to="/" className="logo"><img src="/alacart.jpg"/></Link>
       </h3>
-      {isLogin &&  <Text color="primary" size="2rem" justify="space-between">
+      <div style={{display: "flex", marginTop: "-15px"}}>
+      {isLogin &&  <Text color="primary" size="2rem" style={{marginRight: "20px", marginTop: "-25px"}}>
         Welcome {name}
       </Text>
       }
        {subContent}
+       </div>
        </div>
       {!!visible && <SignUp visible={visible} closeHandler={closeHandler} />}
     </nav>
@@ -81,3 +83,4 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
+
