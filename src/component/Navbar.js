@@ -10,7 +10,7 @@ const Navbar = ({ isLogin, name , cartItems ,logout }) => {
 
   const cartItemsLength = cartItems.length > 0 ? cartItems.length: ""
 
-   const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(false);
   const handler = () => {
     setVisible(true);
   };
