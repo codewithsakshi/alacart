@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Spacer, Text, Row } from "@nextui-org/react";
 import { connect } from "react-redux";
@@ -19,9 +19,10 @@ const Navbar = ({ isLogin, name , cartItems ,logout }) => {
     setVisible(false);
   };
 
+ 
   const handleLogout = () => {
     logout();
-  };
+ };
 
   const subContent = !isLogin ? (
     <ul>

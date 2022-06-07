@@ -6,10 +6,16 @@ import SearchBox from "./component/SearchBox";
 import Cart from "./component/cart/Cart";
 import { Footer } from "./component/Footer";
 import { Carousel } from "./component/carousel/Carousel";
+import { useEffect } from "react";
 
 const imagesArr = [ "/image1.jpg", "/image2.jpg", "/image3.jpg", "/image4.jpg"]
 
 export default function App() {
+
+  useEffect(() => {
+    document.title = 'Alacart'
+  })
+
   return (
     <div className="App">
       <BrowserRouter>
