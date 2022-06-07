@@ -9,10 +9,11 @@ const initialState = {
     id: "",
     userName: "",
     email: "",
-    password: ""
+    password: "",
   },
   cartItems: [],
   products: allProducts,
+  address: {}
 };
 
 export const reducer = (state = initialState, action) => {
@@ -94,8 +95,15 @@ export const reducer = (state = initialState, action) => {
         ...state,
         products: filteredProduct
       }
+      case ACTIONS.ADD_ADDRESS:
+        console.log("reducer", action.payload)
+        return {
+          ...state,
+          address: action.payload
+        }
 
      default:
       return state;
   }
+  
 };

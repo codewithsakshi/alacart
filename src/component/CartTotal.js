@@ -1,10 +1,21 @@
-import React from "react"
+import React , {useState}from "react"
 import { Button, Text, Spacer } from "@nextui-org/react"
 import {FaMinus} from "react-icons/fa"
+import AddressForm from "./AddressForm"
 
 export const CartTotal = ({subtotal, discountMoney}) => {
   let shipping = 20;
-  const totalMoney = subtotal - discountMoney
+  const totalMoney = subtotal - discountMoney;
+
+  const [visible, setVisible] = useState(false);
+  const handler = () => {
+    setVisible(true);
+  };
+
+  const closeHandler = () => {
+    setVisible(false);
+  };
+
  
     return(
         <div className="cart_total">
@@ -56,7 +67,8 @@ export const CartTotal = ({subtotal, discountMoney}) => {
         </div>
         </div>
         <Spacer y={1}></Spacer>
-        <Button size="lg" className="checkout_btn">GO TO CHECKOUT </Button>
+        <Button size="lg" className="checkout_btn" onClick={handler}>GO TO CHECKOUT </Button>
+        {visible && <AddressForm closeHandler={closeHandler} visible={visible}/>}
         </div>
     )
 }
