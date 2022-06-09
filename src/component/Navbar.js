@@ -41,7 +41,7 @@ const Navbar = ({ isLogin, name , cartItems ,logout }) => {
         </Link>
         <Spacer x={2}/>
         <Button auto onClick={handleLogout} style={{marginTop: "-5px"}}>
-          Logout
+          <Link to="/" style={{color: "white"}}>Logout</Link>
         </Button>
        </Row>
       </li>

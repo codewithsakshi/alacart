@@ -5,7 +5,6 @@ import Navbar from "./component/Navbar";
 import SearchBox from "./component/SearchBox";
 import Cart from "./component/cart/Cart";
 import { Footer } from "./component/Footer";
-import { Carousel } from "./component/carousel/Carousel";
 import { useEffect } from "react";
 
 const imagesArr = [ "/image1.jpg", "/image2.jpg", "/image3.jpg", "/image4.jpg"]
@@ -33,7 +32,6 @@ const Home = () => {
   return (
     <div>
       <SearchBox />
-      <Carousel arrayOfImagesUrl={imagesArr}/>
       <Cards />
       <Footer/>
     </div>
